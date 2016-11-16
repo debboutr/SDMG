@@ -21,7 +21,7 @@ import pandas as pd
 def findUpstreamNpy(zone, com, numpy_dir):
     '''
     __author__ =  "Rick Debbout <debbout.rick@epa.gov>"
-    Creates an OrderdDict for looping through regions of the NHD RPU zones
+    Creates an OrderedDict for looping through regions of the NHD RPU zones
 
     Arguments
     ---------

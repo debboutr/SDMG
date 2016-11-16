@@ -11,11 +11,11 @@ import pandas as pd
 import geopandas as gpd
 from datetime import datetime as dt
 from StreamCat_functions import findUpstreamNpy
-DL_dir = r'C:\Users\Rdebbout\Downloads\SpatialData'
+DL_dir = r'/home/rick/Downloads/SpatialData'
 zone = '16'
-lakes = gpd.GeoDataFrame.from_file('%s/NHDPlus%s/NHDWaterbodies.shp' % (DL_dir, zone)) 
-cats = gpd.GeoDataFrame.from_file('%s/NHDPlus%s/NHDCatchment.shp' % (DL_dir, zone)) 
-lookup = pd.read_csv('%s/lookupCOMs%s.csv' % (DL_dir, zone))
+lakes = gpd.GeoDataFrame.from_file('%s/NHDPlus%s/NHDWaterbodies.shp' % (DL_dir, zone)).to_crs({'init' :'epsg:5070'})
+cats = gpd.GeoDataFrame.from_file('%s/NHDPlus%s/NHDCatchment.shp' % (DL_dir, zone)).to_crs({'init' :'epsg:5070'}) 
+lookup = pd.read_csv('%s/lookupCOMS%s.csv' % (DL_dir, zone))
 lks = gpd.GeoDataFrame()
 bsn = gpd.GeoDataFrame()
 miss = gpd.GeoDataFrame()
